@@ -3,349 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tie Dye Artist - Custom & Shop</title>
+    <title>Drifters Delight - Tie-Dye Art</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-
-        /* Banner Section */
-        .banner {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=400&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-blend-mode: overlay;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-
-        .banner h1 {
-            font-size: 4em;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            z-index: 1;
-            letter-spacing: 2px;
-        }
-
-        /* Custom Order Section */
-        .custom-order-container {
-            background-color: white;
-            padding: 50px 20px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .custom-order-container h2 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            color: #764ba2;
-        }
-
-        .order-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #f9f9f9;
-            padding: 30px;
-            border-radius: 8px;
-            border: 2px solid #667eea;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: #333;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            margin: 0;
             font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 5px rgba(102, 126, 234, 0.5);
-        }
-
-        .submit-btn {
-            background-color: #667eea;
-            color: white;
-            padding: 12px 40px;
-            border: none;
-            border-radius: 4px;
-            font-size: 1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background-color: #764ba2;
-        }
-
-        /* Shop Section */
-        .shop-container {
-            padding: 50px 20px;
-            background-color: #fff;
-        }
-
-        .shop-container h2 {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 40px;
-            color: #764ba2;
-        }
-
-        .shop {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            overflow-y: auto;
-        }
-
-        .product {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-        }
-
-        .product:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 250px;
-            background-color: #e0e0e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3em;
-            color: #999;
-            overflow: hidden;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-info h3 {
-            font-size: 1.3em;
-            margin-bottom: 10px;
+            background: linear-gradient(to bottom, #ff7e5f, #feb47b);
             color: #333;
         }
-
-        .product-info p {
-            margin-bottom: 15px;
-            color: #666;
-            font-size: 0.95em;
-        }
-
-        .price {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #667eea;
-            margin-bottom: 15px;
-        }
-
-        .buy-btn {
-            background-color: #667eea;
-            color: white;
-            padding: 10px 30px;
-            border: none;
-            border-radius: 4px;
-            font-size: 0.95em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .buy-btn:hover {
-            background-color: #764ba2;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: white;
+        header {
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-
-        @media (max-width: 768px) {
-            .banner h1 {
-                font-size: 2.5em;
-            }
-
-            .custom-order-container h2,
-            .shop-container h2 {
-                font-size: 2em;
-            }
-
-            .shop {
-                grid-template-columns: 1fr;
-            }
+        #hero { 
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        #custom-order {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .shop {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        .product {
+            flex: 0 1 calc(33% - 10px);
+            margin: 5px;
+            padding: 10px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-    <!-- Banner Section -->
-    <div class="banner">
-        <h1>🌈 Tie Dye Artist 🌈</h1>
-    </div>
-
-    <!-- Custom Order Section -->
-    <div class="custom-order-container">
-        <h2>💜 Custom Orders 💜</h2>
-        <form class="order-form">
-            <div class="form-group">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone">
-            </div>
-            <div class="form-group">
-                <label for="custom-order">Describe Your Custom Order:</label>
-                <textarea id="custom-order" name="custom-order" required placeholder="Tell us what you'd like us to create!"></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Submit Custom Order Request</button>
+    <header>
+        <h1 id="hero">Welcome to Drifters Delight!</h1>
+    </header>
+    <section id="custom-order">
+        <h2>Custom Order</h2>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="phone">Phone:</label><br>
+            <input type="tel" id="phone" name="phone"><br>
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" required></textarea><br>
+            <input type="submit" value="Submit">
         </form>
-    </div>
-
-    <!-- Shop Section -->
-    <div class="shop-container">
-        <h2>✨ Shop Our Collection ✨</h2>
-        <div class="shop">
-            <div class="product">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1581944286160-95c0e6b7c3a6?w=400&h=400&fit=crop" alt="Tie Dye T-Shirt">
-                </div>
-                <div class="product-info">
-                    <h3>Classic T-Shirt</h3>
-                    <p>Vibrant tie dye classic tee</p>
-                    <div class="price">$25.00</div>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="product">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1591047990852-142456b21dd2?w=400&h=400&fit=crop" alt="Tie Dye Hoodie">
-                </div>
-                <div class="product-info">
-                    <h3>Cozy Hoodie</h3>
-                    <p>Warm and stylish hoodie</p>
-                    <div class="price">$45.00</div>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="product">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1585500572309-c5a4178eb132?w=400&h=400&fit=crop" alt="Tie Dye Tote Bag">
-                </div>
-                <div class="product-info">
-                    <h3>Canvas Tote Bag</h3>
-                    <p>Perfect for everyday carry</p>
-                    <div class="price">$20.00</div>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="product">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1556821552-5f06b5a504d2?w=400&h=400&fit=crop" alt="Tie Dye Socks">
-                </div>
-                <div class="product-info">
-                    <h3>Cozy Socks Pack</h3>
-                    <p>Set of 3 comfortable socks</p>
-                    <div class="price">$18.00</div>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="product">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=400&fit=crop" alt="Tie Dye Bandana">
-                </div>
-                <div class="product-info">
-                    <h3>Colorful Bandana</h3>
-                    <p>Versatile tie dye bandana</p>
-                    <div class="price">$12.00</div>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
-            </div>
-
-            <div class="product">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1563418414-e80167db218f?w=400&h=400&fit=crop" alt="Tie Dye Scarf">
-                </div>
-                <div class="product-info">
-                    <h3>Lightweight Scarf</h3>
-                    <p>Elegant tie dye scarf</p>
-                    <div class="price">$22.00</div>
-                    <button class="buy-btn">Buy Now</button>
-                </div>
-            </div>
+    </section>
+    <section class="shop">
+        <div class="product">
+            <img src="tshirt.jpg" alt="T-shirt">
+            <h3>T-shirt</h3>
+            <p>$20.00</p>
+            <button>Buy Now</button>
         </div>
-    </div>
-
-    <!-- Footer -->
+        <div class="product">
+            <img src="hoodie.jpg" alt="Hoodie">
+            <h3>Hoodie</h3>
+            <p>$40.00</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="product">
+            <img src="totebag.jpg" alt="Tote Bag">
+            <h3>Tote Bag</h3>
+            <p>$15.00</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="product">
+            <img src="socks.jpg" alt="Socks">
+            <h3>Socks</h3>
+            <p>$10.00</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="product">
+            <img src="bandana.jpg" alt="Bandana">
+            <h3>Bandana</h3>
+            <p>$12.00</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="product">
+            <img src="scarf.jpg" alt="Scarf">
+            <h3>Scarf</h3>
+            <p>$18.00</p>
+            <button>Buy Now</button>
+        </div>
+    </section>
     <footer>
-        <p>&copy; 2026 Tie Dye Artist. All rights reserved.</p>
-        <p>Handmade with 💜 and vibrant colors</p>
+        <p>&copy; 2026 Drifters Delight. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
