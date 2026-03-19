@@ -3,49 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Orders</title>
+    <title>Custom Tie-Dye Order Form</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, pink, purple);
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            background: transparent;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        input:focus, textarea:focus, select:focus {
+            border-color: gradient(to right, pink, purple);
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+        }
+        button {
+            background: linear-gradient(to right, pink, purple);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: linear-gradient(to right, purple, pink);
+        }
+    </style>
 </head>
 <body>
-    <h1>Custom Orders Form</h1>
+    <nav>
+        <h2>Custom Tie-Dye Order</h2>
+    </nav>
     <form>
         <label for="productType">Product Type:</label>
-        <select id="productType" name="productType">
-            <option value="t-shirt">T-Shirt</option>
-            <option value="hoodie">Hoodie</option>
-            <option value="tapestry">Tapestry</option>
-            <option value="tote bag">Tote Bag</option>
-            <option value="shorts">Shorts</option>
-            <option value="dress">Dress</option>
-            <option value="socks">Socks</option>
-            <option value="scarf">Scarf</option>
-            <option value="crop top">Crop Top</option>
-            <option value="other">Other</option>
-        </select><br><br>
-        
+        <select id="productType">
+            <option value="T-shirt">T-shirt</option>
+            <option value="Hoodie">Hoodie</option>
+            <option value="Tapestry">Tapestry</option>
+            <option value="Tote Bag">Tote Bag</option>
+            <option value="Shorts">Shorts</option>
+            <option value="Dress">Dress</option>
+            <option value="Socks">Socks</option>
+            <option value="Scarf">Scarf</option>
+            <option value="Crop Top">Crop Top</option>
+            <option value="Other">Other</option>
+        </select>
+
         <label for="size">Size:</label>
-        <select id="size" name="size">
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
-            <option value="extra-large">Extra Large</option>
-        </select><br><br>
-        
-        <label for="color">Color Preferences:</label>
-        <input type="text" id="color" name="color"><br><br>
-        
+        <select id="size">
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+        </select>
+
+        <label for="colorPreferences">Color Preferences:</label>
+        <input type="text" id="colorPreferences" placeholder="Enter color preferences">
+
         <label for="budget">Budget Range:</label>
-        <input type="text" id="budget" name="budget"><br><br>
-        
-        <label for="description">Detailed Description:</label><br>
-        <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email"><br><br>
-        
+        <input type="text" id="budget" placeholder="e.g. $10 - $50">
+
+        <label for="description">Description:</label>
+        <textarea id="description" rows="4" placeholder="Provide detailed description..."></textarea>
+
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br><br>
-        
-        <input type="submit" value="Submit">
+        <input type="text" id="name" placeholder="Full Name">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Email Address">
+
+        <button type="submit">Submit Order</button>
     </form>
 </body>
 </html>
