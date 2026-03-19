@@ -3,55 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>Maya Chen - Vibrant Tie-Dye Artist</title>
     <style>
         body {
-            background-color: #0d0d0d;
-            color: #ff00ff; /* Neon pink */
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(90deg, #FF006E, #00D9FF);
+            position: sticky;
+            top: 0;
+            padding: 10px;
             text-align: center;
+            z-index: 1000;
         }
-        .nav {
+        .container {
             display: flex;
-            justify-content: center;
-            padding: 1em;
-            background-color: #05ff89; /* Neon green */
+            padding: 20px;
+            align-items: center;
         }
-        .nav a {
-            margin: 0 15px;
-            color: #0000ff; /* Neon blue */
-            text-decoration: none;
+        .bio {
+            flex: 1;
+            padding: 20px;
         }
-        .content {
-            margin: 20px;
-        }
-        img {
-            max-width: 100%;
+        .bio img {
+            width: 300px;
             height: auto;
+            margin-right: 20px;
+        }
+        h1 {
+            color: #8338EC;
+        }
+        .mission {
+            background: linear-gradient(90deg, #00D9FF, #AAFF00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 24px;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
         }
     </style>
 </head>
 <body>
-    <div class="nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
+    <header>
+        <h1>Maya Chen</h1>
+    </header>
+    <div class="container">
+        <img src="insert_image_url_here" alt="Maya Chen - Tie-Dye Artist">
+        <div class="bio">
+            <h2>Artist Bio</h2>
+            <p>Maya Chen is a passionate tie-dye artist known for her vibrant and eclectic designs. With a background in art and textiles, Maya brings a unique perspective to her work, making each piece a reflection of her creativity and joy.</p>
+            <h3 class="mission">Our mission is to spread color and positivity through art!</h3>
+            <h3>Connect with Me:</h3>
+            <ul>
+                <li><a href="https://instagram.com/yourprofile" target="_blank">Instagram</a></li>
+                <li><a href="https://tiktok.com/@yourprofile" target="_blank">TikTok</a></li>
+                <li><a href="mailto:yourname@example.com">Email</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="content">
-        <h1>About the Artist</h1>
-        <img src="https://example.com/path-to-image.jpg" alt="Tie-dye Artist at Work" />
-        <p>
-            Welcome to the vibrant world of tie-dye artistry! Our artist, Jane Doe, has been creating stunning tie-dye pieces for over a decade. With a passion for colors and patterns, Jane transforms ordinary fabrics into extraordinary masterpieces.
-        </p>
-        <h2>Mission Statement</h2>
-        <p>
-            At Drifters Delight, our mission is to spread joy and creativity through unique tie-dye creations. We believe that art should be an expression of individuality and our pieces are designed to reflect that.
-        </p>
-        <h2>Connect with Us</h2>
-        <a href="https://facebook.com/DriftersDelight">Facebook</a> | 
-        <a href="https://instagram.com/DriftersDelight">Instagram</a> | 
-        <a href="https://twitter.com/DriftersDelight">Twitter</a>
-    </div>
+    <footer>
+        <p>&copy; 2026 Maya Chen. All rights reserved.</p>
+    </footer>
 </body>
 </html>
