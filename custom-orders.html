@@ -4,63 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Orders</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .form-container { width: 50%; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
-        input[type="file"] { display: none; }
-        .file-preview { margin: 10px 0; }
-        img { max-width: 200px; max-height: 200px; }
-        .error { color: red; }
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- Assume there's a matching theme CSS file -->
 </head>
 <body>
-<div class="form-container">
-    <h1>Custom Orders</h1>
-    <form id="customOrderForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <br>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="custom-orders.html">Custom Orders</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <h1>Custom Order Form</h1>
+    <form id="orderForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
-        <br>
-        <label for="file">Upload Image:</label>
-        <input type="file" id="fileUpload" accept="image/*" onchange="previewFile()">
-        <button type="button" onclick="document.getElementById('fileUpload').click();">Choose File</button>
-        <div class="file-preview" id="filePreview"></div>
-        <br>
-        <button type="submit">Submit</button>
-        <div class="error" id="formError"></div>
-    </form>
-</div>
-<script>
-    function previewFile() {
-        const file = document.getElementById('fileUpload').files[0];
-        const preview = document.getElementById('filePreview');
-        const errorDiv = document.getElementById('formError');
-        preview.innerHTML = '';
-        errorDiv.innerHTML = '';
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const img = document.createElement('img');
-                img.src = e.target.result;
-                preview.appendChild(img);
-            };
-            reader.readAsDataURL(file);
-        } else {
-            errorDiv.innerHTML = 'No file selected.';
-        }
-    }
 
-    document.getElementById('customOrderForm').onsubmit = function(event) {
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const file = document.getElementById('fileUpload').files[0];
-        if (!file) {
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone">
+
+        <label for="productType">Product Type:</label>
+        <select id="productType" name="productType" required>
+            <option value="">Select a product...</option>
+            <option value="type1">Type 1</option>
+            <option value="type2">Type 2</option>
+        </select>
+
+        <label for="size">Size:</label>
+        <select id="size" name="size" required>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+
+        <label for="color">Color Preferences:</label>
+        <input type="text" id="color" name="color">
+
+        <label for="budget">Budget Range:</label>
+        <input type="text" id="budget" name="budget" required>
+
+        <label for="details">Detailed Description:</label>
+        <textarea id="details" name="details" required></textarea>
+
+        <label for="deadline">Optional Deadline:</label>
+        <input type="date" id="deadline" name="deadline">
+
+        <button type="submit">Submit Order</button>
+    </form>
+
+    <div id="messages"></div> <!-- For displaying success/error messages -->
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init('hXOOo_HRmFLMnmWnD');
+        })();
+
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            document.getElementById('formError').innerHTML = 'Please upload an image file.';
-        }
-    };
-</script>
+            this.email = document.getElementById('email').value;
+
+            emailjs.send(this.service, 'template_py6u9up', {
+                first_name: document.getElementById('firstName').value,
+                last_name: document.getElementById('lastName').value,
+                email: this.email,
+                phone: document.getElementById('phone').value,
+                product_type: document.getElementById('productType').value,
+                size: document.getElementById('size').value,
+                color: document.getElementById('color').value,
+                budget: document.getElementById('budget').value,
+                details: document.getElementById('details').value,
+                deadline: document.getElementById('deadline').value
+            })
+            .then(function(response) {
+                document.getElementById('messages').innerHTML = '<p>Order submitted successfully!</p>';
+            }, function(error) {
+                document.getElementById('messages').innerHTML = '<p>Error in submitting order. Please try again.</p>';
+            });
+        });
+    </script>
 </body>
 </html>
