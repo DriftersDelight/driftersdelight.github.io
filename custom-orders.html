@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Orders</title>
+</head>
+<body>
+    <h1>Custom Orders Form</h1>
+    <form>
+        <label for="productType">Product Type:</label>
+        <select id="productType" name="productType">
+            <option value="t-shirt">T-Shirt</option>
+            <option value="hoodie">Hoodie</option>
+            <option value="tapestry">Tapestry</option>
+            <option value="tote bag">Tote Bag</option>
+            <option value="shorts">Shorts</option>
+            <option value="dress">Dress</option>
+            <option value="socks">Socks</option>
+            <option value="scarf">Scarf</option>
+            <option value="crop top">Crop Top</option>
+            <option value="other">Other</option>
+        </select><br><br>
+        
+        <label for="size">Size:</label>
+        <select id="size" name="size">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+            <option value="extra-large">Extra Large</option>
+        </select><br><br>
+        
+        <label for="color">Color Preferences:</label>
+        <input type="text" id="color" name="color"><br><br>
+        
+        <label for="budget">Budget Range:</label>
+        <input type="text" id="budget" name="budget"><br><br>
+        
+        <label for="description">Detailed Description:</label><br>
+        <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
